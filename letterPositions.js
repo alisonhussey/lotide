@@ -19,32 +19,17 @@ const assertArraysEqual = function(actual, expected) {
 
 const letterPositions = function(sentence) {
   const results = {};
-  for (let i = 0; i < sentence.length; i++){
-    if (results[sentence[i]]) {
-
-      results[sentence[i]] += [i];
+  for (let i = 0; i < sentence.length; i++) {
+    let letter = sentence[i];
+    if (results[letter]) {
+      results[letter].push(i);
     } else {
-      results[sentence[i]] = [];
+      results[letter] = [i];
     }
+  }
   return results;
-    console.log("results[sentence[i]]:" + [sentence[i]])
-}
 };
 
 console.log(letterPositions("hello"));
 
-
-
-/*const countLetters = function(word) {
-  const results = {};
-  for (const letter of word) {
-    if (letter !== " ") {
-      if (results[letter]) {
-        results[letter] += 1;
-      } else {
-        results[letter] = 1;
-      }
-    }
-  }
-  return results;
-};*/
+assertArraysEqual(letterPositions("hello").e, [1]);
