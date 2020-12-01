@@ -1,4 +1,13 @@
-const findKey = function(object, callback) {
+const assertEqual = function(actual, expected) {
+  if (actual === expected) {
+    console.log(`😍😍😍 Assertion Passed: ${actual} === ${expected}`);
+  } else {
+    console.log(`🤬🤬🤬 Assertion Failed: ${actual} !== ${expected}`);
+  }
+};
+
+
+/*const findKey = function(object, callback) {
   const results = [];
   for (let item of object) {
     results.push(item);
@@ -7,8 +16,17 @@ const findKey = function(object, callback) {
     }
   }
   return results;
-};
+};*/
 
+const findKey = function(object, callback) {
+  const listOfKeys = Object.keys(object);
+  for (let x of listOfKeys) {
+    if (object[x] === callback) {
+
+      return Object.keys(object[x]);
+    }
+  }
+};
 
 findKey({
   "Blue Hill": { stars: 1 },

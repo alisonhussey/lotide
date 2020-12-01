@@ -9,7 +9,7 @@ const eqArrays = function(arr1, arr2) {
   return true;
 };
 
-const without = function(source, itemsToRemove){
+const without = function(source, itemsToRemove) {
   let output = [];
   for (let i = 0; i < source.length; i++) {
     if (!itemsToRemove.includes(source[i])) {
@@ -17,10 +17,10 @@ const without = function(source, itemsToRemove){
     }
   }
   return output;
-} 
+};
 
-console.log(without([1, 2, 3], [1])) // => [2, 3]
-console.log(without(["1", "2", "3"], [1, 2, "3"])) // => ["1", "2"]
+console.log(without([1, 2, 3], [1])); // => [2, 3]
+console.log(without(["1", "2", "3"], [1, 2, "3"])); // => ["1", "2"]
 
 
 
