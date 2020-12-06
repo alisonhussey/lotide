@@ -6,33 +6,29 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-
-/*const findKey = function(object, callback) {
-  const results = [];
-  for (let item of object) {
-    results.push(item);
-    if (callback(item)) {
-      break;
-    }
-  }
-  return results;
-};*/
-
 const findKey = function(object, callback) {
-  const listOfKeys = Object.keys(object);
-  for (let x of listOfKeys) {
-    if (object[x] === callback) {
-
-      return Object.keys(object[x]);
+  for (let key in object) {
+    if (callback(object[key])) {
+      return key;
     }
   }
 };
 
-findKey({
+
+console.log(findKey({
   "Blue Hill": { stars: 1 },
   "Akaleri":   { stars: 3 },
   "noma":      { stars: 2 },
   "elBulli":   { stars: 3 },
   "Ora":       { stars: 2 },
   "Akelarre":  { stars: 3 }
-}, x => x.stars === 2) // => "noma"
+}, x => x.stars === 2)) // => "noma"
+
+assertEqual(findKey({
+  "Blue Hill": { stars: 1 },
+  "Akaleri":   { stars: 3 },
+  "noma":      { stars: 2 },
+  "elBulli":   { stars: 3 },
+  "Ora":       { stars: 2 },
+  "Akelarre":  { stars: 3 }
+}, x => x.stars === 2), 'noma');

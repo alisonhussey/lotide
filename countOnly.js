@@ -19,7 +19,7 @@ const countOnly = function(allItems, itemsToCount) {
   }
   return results;
 };
-
+/*
 const firstNames = [
   "Karl",
   "Salima",
@@ -38,4 +38,4 @@ console.log(result1);
 assertEqual(result1["Jason"], 1);
 assertEqual(result1["Karima"], undefined);
 assertEqual(result1["Fang"], 2);
-assertEqual(result1["Agouhanna"], undefined);
+assertEqual(result1["Agouhanna"], undefined);*/
